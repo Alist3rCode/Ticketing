@@ -17,8 +17,21 @@
         <!-- Custom styles for this template-->
         <link href="css/sb-admin.css" rel="stylesheet">
         <link href="css/ecs_ticketing.css" rel="stylesheet">
-
+        <!-- Include Required Prerequisites -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+
 
     </head>
 
@@ -206,20 +219,22 @@
                 </div>
 
                 <!-- Example DataTables Card-->
-                <button  type="button" data-toggle="collapse" data-target="#Filter" aria-expanded="false" aria-label="Toggle Filter"> 
+                <button  type="button" data-toggle="collapse" data-target="#Filter" aria-expanded="false" aria-label="Toggle Filter" class="btn btn-secondary btn-lg btn-block"> 
                     <span class="fa fa-fw fa-filter"></span> Modifier les filtres</button>
 
 
                 <div id="Filter" class="collapse col-12 ">
 
                     <div class="filter">
-                        <div class="col-md-3" >
+                        <div class="col-xl-3 col-sm-6 mb-3" >
                             <form action="" class="formulaire col-12" >
                                 <div class="row">
                                     <input class="champ form-control col-4" type="text" value="Numéro"/>   
                                     <input class="champ form-control col-8" type="text" value="Titre"/>  
                                 </div>
-                                <div class="row"><input class="description form-control col-12" type="text" value="Description" /> </div>
+                                <div class="row">
+                                    <input class="champ form-control col-12" type="text" value="Description" /> 
+                                </div>
                                 <div class="row">
                                     <input class="champ form-control col-6" type="text" value="Client"/>   
                                     <input class="champ form-control col-6" type="text" value="Contact"/>  
@@ -227,98 +242,91 @@
                             </form>
                         </div>
 
-                        <div class="col-md-3">
-                                <div class="row">
-                                    
-                                        <form action="" class="formulaire col-12" >
-                                            <input type="text" name="daterange" value="Date de Création" class="form-control" />
-
-                                            
-                                        </form>
-                                    
-                                </div>
-
-                            
-                        </div>
-                        <div class="col-md-3">
+                        <div class="col-xl-3 col-sm-6 mb-3">
                             <form action="" class="formulaire col-12" >
                                 <div class="row">
-                                    <input class="champ form-control col-4" type="text" value="Numéro"/>   
-                                    <input class="champ form-control col-8" type="text" value="Titre"/>  
+                                    <div class="col-6">Date de création du ticket : </div>
+                                    <input type="text" name="daterange" value="" class="form-control col-6"/>
+
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $('input[name="daterange"]').daterangepicker();
+                                        });
+                                    </script>
+                                    
                                 </div>
-                                <div class="row"><input class="description form-control col-12" type="text" value="Description" /> </div>
                                 <div class="row">
-                                    <input class="champ form-control col-6" type="text" value="Client"/>   
-                                    <input class="champ form-control col-6" type="text" value="Contact"/>  
+                                    <div class="col-6">Date de fermeture du ticket : </div>
+                                    <input type="text" name="daterange" value="" class="form-control col-6"/>
+
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $('input[name="daterange"]').daterangepicker();
+                                        });
+                                    </script>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">Date de l'étape :  </div>
+                                    <input type="text" name="daterange" value="" class="form-control col-6"/>
+
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $('input[name="daterange"]').daterangepicker();
+                                        });
+                                    </script>
+                                    
                                 </div>
                             </form>
+
                         </div>
-                        <div class="col-md-3"><form action="" class="formulaire col-12" >
+                        <div class="col-xl-3 col-sm-6 mb-3">
+                            <form action="" class="formulaire col-12" >
                                 <div class="row">
-                                    <input class="champ form-control col-4" type="text" value="Numéro"/>   
-                                    <input class="champ form-control col-8" type="text" value="Titre"/>  
+                                    <input class="champ form-control col-6" type="text" value="Sévérité"/>   
+                                    <input class="champ form-control col-6" type="text" value="Version"/>  
                                 </div>
-                                <div class="row"><input class="description form-control col-12" type="text" value="Description" /> </div>
                                 <div class="row">
-                                    <input class="champ form-control col-6" type="text" value="Client"/>   
-                                    <input class="champ form-control col-6" type="text" value="Contact"/>  
+                                    <select class="form-control col-6" name="size" >
+                                        <option value="">Logiciel</option>
+                                        <option value="1">ECS Imaging</option>
+                                        <option value="2">ECS View Web</option>
+                                        <option value="3">ECS View 3D / STD</option>
+                                    </select>
+                                    <select class="form-control col-6" name="size" >
+                                        <option value="">Etat</option>
+                                        <option value="1">Nouveau</option>
+                                        <option value="2">Pris en Compte</option>
+                                        <option value="3">En cours de Traitement</option>
+                                        <option value="3">Attente Client</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-secondary caseacocher ">
+                                            <input type="checkbox"> Inclure les tickets fermés
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        <div class="col-xl-3 col-sm-6 mb-3">
+                            <form action="" class="formulaire col-12" >
+                                <div class="row">
+                                    <input class="champ form-control col-6" type="text" value="Créer par..."/>   
+                                    <input class="champ form-control col-6" type="text" value="Etape par..."/>  
+                                </div>
+                                <div class="row">
+                                    <input class="champ form-control col-12" type="text" value="Assigné à..." /> 
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-secondary">Appliquer</button>
                                 </div>
                             </form>
                         </div>
 
                     </div>
-                    <!--    <div class="col-md-3">
-                                <img src="vendor/f.png">
-                                <form action="" class="formulaire" >
-                                    <input class="champ" type="text" value="Numéro"/>                    
-                                 </form>
-                                <form action="" class="formulaire" >
-                                    <input class="champ" type="text" value="Titre"/>                    
-                                </form>
-                                <form action="" class="formulaire description" >
-                                    <input class="champ" type="text" value="Description"/>                    
-                                </form>
-                            </div>
-                           <div class="col-md-3">
-                                <img src="vendor/f.png">
-                                
-                                <form action="" class="formulaire" >
-                                    <input class="champ" type="text" value="Numéro"/>                    
-                                 </form>
-                                <form action="" class="formulaire" >
-                                    <input class="champ" type="text" value="Titre"/>                    
-                                </form>
-                                <form action="" class="formulaire description" >
-                                    <input class="champ" type="text" value="Description"/>                    
-                                </form>
-                            </div>
-                            <div class="col-md-3">
-                               <img src="vendor/f.png">
-                                <form action="" class="formulaire" >
-                                    <input class="champ" type="text" value="Numéro"/>                    
-                                 </form>
-                                <form action="" class="formulaire" >
-                                    <input class="champ" type="text" value="Titre"/>                    
-                                </form>
-                                <form action="" class="formulaire description" >
-                                    <input class="champ" type="text" value="Description"/>                    
-                                </form>
-                            </div>
-                            <div class="col-md-3">
-                                <img src="vendor/f.png">
-                                <form action="" class="formulaire" >
-                                    <input class="champ" type="text" value="Numéro"/>                    
-                                 </form>
-                                <form action="" class="formulaire" >
-                                    <input class="champ" type="text" value="Titre"/>                    
-                                </form>
-                                <form action="" class="formulaire description" >
-                                    <input class="champ" type="text" value="Description"/>                    
-                                </form>
-                            </div>
-                            
-                          
-                    -->
+
                 </div>
 
 
@@ -533,7 +541,7 @@
                 </div>
             </div>
             <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
+            <!--<script src="vendor/jquery/jquery.min.js"></script>-->
             <script src="vendor/popper/popper.min.js"></script>
             <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
             <!-- Core plugin JavaScript-->
@@ -548,49 +556,8 @@
             <script src="js/sb-admin-datatables.min.js"></script>
             <script src="js/sb-admin-charts.min.js"></script>
             <!-- Include Required Prerequisites -->
-            <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-            <!-- Include Date Range Picker -->
-            <script type="text/javascript">
-                                                $(function () {
-                                                    $('#daterange').daterangepicker({
-                                                        "showDropdowns": true,
-                                                        "timePicker24Hour": true,
-                                                        "ranges": {
-                                                            "Today": [
-                                                                "2017-09-26T11:08:29.422Z",
-                                                                "2017-09-26T11:08:29.422Z"
-                                                            ],
-                                                            "Yesterday": [
-                                                                "2017-09-25T11:08:29.422Z",
-                                                                "2017-09-25T11:08:29.422Z"
-                                                            ],
-                                                            "Last 7 Days": [
-                                                                "2017-09-20T11:08:29.422Z",
-                                                                "2017-09-26T11:08:29.422Z"
-                                                            ],
-                                                            "Last 30 Days": [
-                                                                "2017-08-28T11:08:29.422Z",
-                                                                "2017-09-26T11:08:29.422Z"
-                                                            ],
-                                                            "This Month": [
-                                                                "2017-08-31T22:00:00.000Z",
-                                                                "2017-09-30T21:59:59.999Z"
-                                                            ],
-                                                            "Last Month": [
-                                                                "2017-07-31T22:00:00.000Z",
-                                                                "2017-08-31T21:59:59.999Z"
-                                                            ]
-                                                        },
-                                                        "alwaysShowCalendars": true,
-                                                        "startDate": "09/20/2017",
-                                                        "endDate": "09/26/2017",
-                                                        "opens": "left"
-                                                    }, function (start, end, label) {
-                                                        console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-                                                    });
-                                                });
-                                            </script>
-            <!--<script type="text/javascript" src="js/daterangepicker.js"></script>-->
+
+
         </div>
     </body>
 

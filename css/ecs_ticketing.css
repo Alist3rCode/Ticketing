@@ -4,7 +4,7 @@
         /*width: 100%;*/
             
 	justify-content: center;
-	background-color: green;
+        background-color: #cccccc;
 	align-content : stretch;
         
 	
@@ -42,10 +42,12 @@
 	
 .filter div{
 	margin-top   : 5px;
-        margin-bottom:5px;
-        background-color: gray;
+        
+/*        background-color: gray;*/
 padding: 5px;
 }
 
 
-
+.caseacocher.active{
+        background-color: #3b7ec1 !important;
+}
