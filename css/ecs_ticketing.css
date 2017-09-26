@@ -1,0 +1,51 @@
+.filter{
+	display: flex;
+	flex-flow: row wrap;
+        /*width: 100%;*/
+            
+	justify-content: center;
+	background-color: green;
+	align-content : stretch;
+        
+	
+	
+}
+
+.filter-case{
+	display: flex;
+	flex-flow:  row wrap;
+        width: 20%;
+        height: 100px;
+	justify-content: center;
+	
+	align-content : stretch;
+	
+	
+}
+
+.formulaire{
+    
+    display: flex;
+    flex-flow: row wrap;
+    align-content : stretch;
+    display:inline-block;
+}
+
+
+
+.description {
+
+  width: 100px;
+    
+    
+}
+	
+.filter div{
+	margin-top   : 5px;
+        margin-bottom:5px;
+        background-color: gray;
+padding: 5px;
+}
+
+
+
