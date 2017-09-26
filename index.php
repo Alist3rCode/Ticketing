@@ -75,9 +75,9 @@
                         </ul>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-fw fa-link"></i>
-                            <span class="nav-link-text">Liens Interne</span>
+                        <a class="nav-link" href="https://release.imaging.evolucare.com/yoda/" target="_blank">
+                            <i class="fa fa-fw fa-rebel"></i>
+                            <span class="nav-link-text">Yoda</span>
                         </a>
                     </li>
                 </ul>
@@ -301,13 +301,15 @@
                                         <option value="3">Attente Client</option>
                                     </select>
                                 </div>
-                                <div class="row">
-                                    <div class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-secondary caseacocher ">
+                                
+                                    <div class=" row btn-group " data-toggle="buttons">
+                                        <label class="btn btn-secondary caseacocher col-12">
                                             <input type="checkbox"> Inclure les tickets fermés
+                                            
+
                                         </label>
                                     </div>
-                                </div>
+                                
                             </form>
                             </div>
                         <div class="col-xl-3 col-sm-6 mb-3">
@@ -320,7 +322,10 @@
                                     <input class="champ form-control col-12" type="text" value="Assigné à..." /> 
                                 </div>
                                 <div class="row">
-                                    <button type="button" class="btn btn-secondary">Appliquer</button>
+                                    <button type="button" class="btn btn-secondary"><span class="fa fw-fa fa-check"></span></button>
+                                    <button type="button" class="btn btn-secondary"><span class="fa fw-fa fa-star"></span></button>
+                                    <button type="button" class="btn btn-secondary"><span class="fa fw-fa fa-ban"></span></button>
+                                    
                                 </div>
                             </form>
                         </div>
